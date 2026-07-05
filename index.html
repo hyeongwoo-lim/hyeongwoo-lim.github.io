@@ -6,464 +6,98 @@
   <title>Hyeong Woo Lim | Academic Portfolio</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --teal:   #0891b2;
-      --teal-d: #0e7490;
-      --teal-l: #e0f2f8;
-      --gray:   #64748b;
-      --dark:   #0f172a;
-      --text:   #1e293b;
-      --muted:  #94a3b8;
-      --bg:     #f8fafc;
-      --white:  #ffffff;
-      --border: #e2e8f0;
-      --nav-h:  64px;
+      --teal:   #0891b2; --teal-d: #0e7490; --teal-l: #e0f2f8;
+      --gray:   #64748b; --dark:   #0f172a; --text:   #1e293b;
+      --muted:  #94a3b8; --bg:     #f8fafc; --white:  #ffffff;
+      --border: #e2e8f0; --nav-h:  64px;
     }
-
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.7;
-    }
-
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); background: var(--bg); line-height: 1.7; }
     a { color: var(--teal); text-decoration: none; }
     a:hover { text-decoration: underline; }
-
-    /* ── Nav ── */
     nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      height: var(--nav-h);
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(12px);
+      position: sticky; top: 0; z-index: 100; height: var(--nav-h);
+      background: rgba(255,255,255,0.92); backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 2.5rem;
+      display: flex; align-items: center; justify-content: space-between; padding: 0 2.5rem;
     }
-
-    .nav-brand {
-      font-weight: 700;
-      font-size: 1rem;
-      color: var(--dark);
-      letter-spacing: -0.01em;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: var(--gray);
-      transition: color .2s;
-    }
-
+    .nav-brand { font-weight: 700; font-size: 1rem; color: var(--dark); letter-spacing: -0.01em; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--gray); transition: color .2s; }
     .nav-links a:hover { color: var(--teal); text-decoration: none; }
-
-    /* ── Hero ── */
     #about {
-      min-height: calc(100vh - var(--nav-h));
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 4rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 5rem 2rem;
+      min-height: calc(100vh - var(--nav-h)); display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center; gap: 4rem; max-width: 1100px; margin: 0 auto; padding: 5rem 2rem;
     }
-
-    .hero-text h1 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 800;
-      color: var(--dark);
-      letter-spacing: -0.04em;
-      line-height: 1.15;
-      margin-bottom: 0.5rem;
-    }
-
-    .hero-text .position {
-      font-size: 1rem;
-      color: var(--teal);
-      font-weight: 600;
-      margin-bottom: 0.3rem;
-    }
-
-    .hero-text .affil {
-      font-size: 0.9rem;
-      color: var(--gray);
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-bottom: 2rem;
-    }
-
+    .hero-text h1 { font-size: clamp(2rem,4vw,3rem); font-weight: 800; color: var(--dark); letter-spacing: -0.04em; line-height: 1.15; margin-bottom: 0.5rem; }
+    .hero-text .position { font-size: 1rem; color: var(--teal); font-weight: 600; margin-bottom: 0.3rem; }
+    .hero-text .affil { font-size: 0.9rem; color: var(--gray); margin-bottom: 1.5rem; }
+    .hero-links { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2rem; }
     .hero-links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      padding: 0.45rem 0.9rem;
-      border-radius: 99px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      background: var(--teal-l);
-      color: var(--teal-d);
-      transition: background .2s, transform .15s;
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      padding: 0.45rem 0.9rem; border-radius: 99px; font-size: 0.82rem; font-weight: 600;
+      background: var(--teal-l); color: var(--teal-d); transition: background .2s, transform .15s;
     }
-
     .hero-links a:hover { background: var(--teal); color: #fff; text-decoration: none; transform: translateY(-1px); }
-
-    .hero-text p.bio {
-      font-size: 0.95rem;
-      color: var(--gray);
-      line-height: 1.8;
-      max-width: 520px;
-    }
-
-    .hero-img-wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    .avatar {
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(8,145,178,0.3);
-      background: linear-gradient(135deg, var(--teal), #06b6d4);
-    }
-
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .stat-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      width: 100%;
-    }
-
-    .stat-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.2rem;
-      text-align: center;
-    }
-
-    .stat-card .num {
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: var(--teal);
-      letter-spacing: -0.03em;
-    }
-
-    .stat-card .lbl {
-      font-size: 0.72rem;
-      color: var(--muted);
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    /* ── Section wrapper ── */
+    .hero-text p.bio { font-size: 0.95rem; color: var(--gray); line-height: 1.8; max-width: 520px; }
+    .hero-img-wrap { display: flex; flex-direction: column; align-items: center; gap: 2rem; }
+    .avatar { width: 220px; height: 220px; border-radius: 50%; overflow: hidden; box-shadow: 0 20px 60px rgba(8,145,178,0.3); background: linear-gradient(135deg,var(--teal),#06b6d4); }
+    .avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .stat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; width: 100%; }
+    .stat-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem; text-align: center; }
+    .stat-card .num { font-size: 1.6rem; font-weight: 800; color: var(--teal); letter-spacing: -0.03em; }
+    .stat-card .lbl { font-size: 0.72rem; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
     section { padding: 5rem 2rem; }
     section:nth-child(even) { background: var(--white); }
-
     .inner { max-width: 1100px; margin: 0 auto; }
-
-    .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: var(--teal);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 0.75rem;
-    }
-
-    .section-label::before {
-      content: '';
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: var(--teal);
-    }
-
-    h2 {
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      font-weight: 800;
-      color: var(--dark);
-      letter-spacing: -0.03em;
-      margin-bottom: 2.5rem;
-    }
-
-    /* ── Research ── */
-    .research-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-
-    .research-box {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.75rem;
-    }
-
-    .research-box h3 {
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-      margin-bottom: 1rem;
-    }
-
-    .tag-cloud {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .tag {
-      padding: 0.35rem 0.8rem;
-      border-radius: 99px;
-      font-size: 0.82rem;
-      font-weight: 500;
-      background: var(--teal-l);
-      color: var(--teal-d);
-    }
-
-    /* ── Timeline ── */
+    .section-label { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.72rem; font-weight: 700; color: var(--teal); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.75rem; }
+    .section-label::before { content: ''; display: block; width: 24px; height: 2px; background: var(--teal); }
+    h2 { font-size: clamp(1.4rem,3vw,2rem); font-weight: 800; color: var(--dark); letter-spacing: -0.03em; margin-bottom: 2.5rem; }
+    .research-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .research-box { background: var(--bg); border: 1px solid var(--border); border-radius: 14px; padding: 1.75rem; }
+    .research-box h3 { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 1rem; }
+    .tag-cloud { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .tag { padding: 0.35rem 0.8rem; border-radius: 99px; font-size: 0.82rem; font-weight: 500; background: var(--teal-l); color: var(--teal-d); }
     .tl-section { margin-bottom: 2.5rem; }
-
-    .tl-section h3 {
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-      margin-bottom: 1.2rem;
-      padding-bottom: 0.6rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .tl-item {
-      display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: 1.5rem;
-      padding: 1.25rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-
+    .tl-section h3 { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 1.2rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); }
+    .tl-item { display: grid; grid-template-columns: 140px 1fr; gap: 1.5rem; padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
     .tl-item:last-child { border-bottom: none; }
-
-    .tl-date {
-      font-size: 0.8rem;
-      color: var(--muted);
-      font-weight: 600;
-      padding-top: 0.15rem;
-      line-height: 1.5;
-    }
-
-    .tl-body h4 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--dark);
-      margin-bottom: 0.25rem;
-    }
-
-    .tl-body .org {
-      font-size: 0.875rem;
-      color: var(--teal);
-      font-weight: 500;
-      margin-bottom: 0.25rem;
-    }
-
-    .tl-body p {
-      font-size: 0.875rem;
-      color: var(--gray);
-    }
-
-    /* ── Publications ── */
-    .pub-filter {
-      display: flex;
-      gap: 0.5rem;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .pub-filter button {
-      padding: 0.4rem 1rem;
-      border-radius: 99px;
-      border: 1px solid var(--border);
-      background: var(--white);
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--gray);
-      cursor: pointer;
-      transition: all .2s;
-    }
-
-    .pub-filter button.active,
-    .pub-filter button:hover {
-      background: var(--teal);
-      color: #fff;
-      border-color: var(--teal);
-    }
-
+    .tl-date { font-size: 0.8rem; color: var(--muted); font-weight: 600; padding-top: 0.15rem; line-height: 1.5; }
+    .tl-body h4 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 0.25rem; }
+    .tl-body .org { font-size: 0.875rem; color: var(--teal); font-weight: 500; margin-bottom: 0.25rem; }
+    .tl-body p { font-size: 0.875rem; color: var(--gray); }
+    .pub-filter { display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+    .pub-filter button { padding: 0.4rem 1rem; border-radius: 99px; border: 1px solid var(--border); background: var(--white); font-size: 0.82rem; font-weight: 600; color: var(--gray); cursor: pointer; transition: all .2s; }
+    .pub-filter button.active, .pub-filter button:hover { background: var(--teal); color: #fff; border-color: var(--teal); }
     .pub-tab { display: none !important; }
     .pub-tab.active { display: block !important; }
-
     .pub-list { display: flex; flex-direction: column; gap: 1rem; }
-
-    .pub-item {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.25rem 1.5rem;
-      display: grid;
-      grid-template-columns: 42px 1fr;
-      gap: 1rem;
-      align-items: start;
-      transition: box-shadow .2s, transform .15s;
-    }
-
+    .pub-item { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 1.5rem; display: grid; grid-template-columns: 42px 1fr; gap: 1rem; align-items: start; transition: box-shadow .2s, transform .15s; }
     .pub-item:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); transform: translateY(-1px); }
     .pub-item.first-author { border-left: 3px solid var(--teal); }
-
-    .pub-num {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--muted);
-      text-align: right;
-      padding-top: 0.2rem;
-    }
-
-    .pub-title {
-      font-size: 0.93rem;
-      font-weight: 600;
-      color: var(--dark);
-      margin-bottom: 0.3rem;
-      line-height: 1.5;
-    }
-
-    .pub-meta {
-      font-size: 0.82rem;
-      color: var(--gray);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      align-items: center;
-    }
-
+    .pub-num { font-size: 0.85rem; font-weight: 700; color: var(--muted); text-align: right; padding-top: 0.2rem; }
+    .pub-title { font-size: 0.93rem; font-weight: 600; color: var(--dark); margin-bottom: 0.3rem; line-height: 1.5; }
+    .pub-meta { font-size: 0.82rem; color: var(--gray); display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
     .pub-journal { font-style: italic; }
-
-    .badge {
-      padding: 0.15rem 0.55rem;
-      border-radius: 99px;
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
+    .badge { padding: 0.15rem 0.55rem; border-radius: 99px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
     .badge-first { background: var(--teal-l); color: var(--teal-d); }
     .badge-if { background: #f0fdf4; color: #166534; }
     .badge-year { background: #f1f5f9; color: #475569; }
-
-    .conf-group-label {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--dark);
-      margin: 1.5rem 0 1rem;
-      padding-bottom: 0.4rem;
-      border-bottom: 1px solid var(--border);
-    }
-
+    .conf-group-label { font-size: 0.85rem; font-weight: 700; color: var(--dark); margin: 1.5rem 0 1rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--border); }
     .conf-group-label:first-child { margin-top: 0; }
-
-    .conf-item, .patent-item {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1rem 1.25rem;
-      display: grid;
-      grid-template-columns: 36px 1fr;
-      gap: 0.75rem;
-      margin-bottom: 0.75rem;
-      font-size: 0.875rem;
-    }
-
-    .conf-item .num, .patent-item .num {
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: var(--muted);
-      text-align: right;
-      padding-top: 0.1rem;
-    }
-
+    .conf-item, .patent-item { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.25rem; display: grid; grid-template-columns: 36px 1fr; gap: 0.75rem; margin-bottom: 0.75rem; font-size: 0.875rem; }
+    .conf-item .num, .patent-item .num { font-size: 0.8rem; font-weight: 700; color: var(--muted); text-align: right; padding-top: 0.1rem; }
     .conf-item .body p, .patent-item .body p { color: var(--text); line-height: 1.55; }
     .conf-item .body .venue, .patent-item .body .venue { font-size: 0.8rem; color: var(--gray); margin-top: 0.2rem; }
-
-    /* ── Awards ── */
     .award-list { display: flex; flex-direction: column; }
-
-    .award-item {
-      display: grid;
-      grid-template-columns: 100px 1fr;
-      gap: 1.5rem;
-      padding: 1rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-
+    .award-item { display: grid; grid-template-columns: 100px 1fr; gap: 1.5rem; padding: 1rem 0; border-bottom: 1px solid var(--border); }
     .award-item:last-child { border-bottom: none; }
-
-    .award-date {
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: var(--teal);
-      padding-top: 0.1rem;
-    }
-
+    .award-date { font-size: 0.8rem; font-weight: 700; color: var(--teal); padding-top: 0.1rem; }
     .award-desc { font-size: 0.9rem; color: var(--text); }
     .award-org { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; }
-
-    /* ── Footer ── */
-    footer {
-      background: var(--dark);
-      color: var(--muted);
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.82rem;
-    }
-
+    footer { background: var(--dark); color: var(--muted); text-align: center; padding: 2rem; font-size: 0.82rem; }
     footer a { color: var(--teal); }
-
-    /* ── Responsive ── */
     @media (max-width: 768px) {
       #about { grid-template-columns: 1fr; padding: 3rem 1.25rem; }
       .hero-img-wrap { order: -1; }
@@ -478,7 +112,6 @@
 </head>
 <body>
 
-<!-- ═══════════════ NAV ═══════════════ -->
 <nav>
   <span class="nav-brand">Welcome to H.W. LIM</span>
   <ul class="nav-links">
@@ -490,7 +123,6 @@
   </ul>
 </nav>
 
-<!-- ═══════════════ HERO ═══════════════ -->
 <section id="about" style="padding-top:0;padding-bottom:0;">
   <div class="hero-text">
     <h1>Hyeong Woo Lim</h1>
@@ -498,65 +130,33 @@
     <p class="affil">Future Fluid and Biomimetics Laboratory<br>Department of Mechanical Engineering, POSTECH</p>
     <div class="hero-links">
       <a href="mailto:hyeongwoo@postech.ac.kr">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        Email
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>Email
       </a>
       <a href="https://scholar.google.com/citations?user=V_XwySkAAAAJ&hl=ko" target="_blank">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-        Google Scholar
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>Google Scholar
       </a>
       <a href="https://www.linkedin.com/in/hyeong-woo-lim-5676b8142/" target="_blank">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-        LinkedIn
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>LinkedIn
       </a>
       <a href="https://orcid.org/0009-0009-7565-1880" target="_blank">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1.5 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm-.5 2h2v7H10v-7z"/></svg>
-        ORCID
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1.5 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm-.5 2h2v7H10v-7z"/></svg>ORCID
       </a>
     </div>
-    <p class="bio">
-      I am a Postdoctoral Researcher at POSTECH's Future Fluid and Biomimetics Laboratory.
-      My research centers on <strong>interfacial transport phenomena</strong>, functional porous materials,
-      and <strong>solar-driven seawater desalination</strong>. Building on this foundation, I aim to extend
-      my thermofluidic expertise toward broader <strong>thermal management</strong>, resource recovery,
-      and waste material/energy reuse technologies.
-    </p>
+    <p class="bio">I am a Postdoctoral Researcher at POSTECH's Future Fluid and Biomimetics Laboratory. My research centers on <strong>interfacial transport phenomena</strong>, functional porous materials, and <strong>solar-driven seawater desalination</strong>. Building on this foundation, I aim to extend my thermofluidic expertise toward broader <strong>thermal management</strong>, resource recovery, and waste material/energy reuse technologies.</p>
   </div>
-
   <div class="hero-img-wrap">
-    <div class="avatar">
-      <img src="profile.jpg" alt="Hyeong Woo Lim" />
-    </div>
+    <div class="avatar"><img src="profile.jpg" alt="Hyeong Woo Lim" /></div>
     <div class="stat-grid">
-      <div class="stat-card">
-        <div class="num">21</div>
-        <div class="lbl">SCI Papers</div>
-      </div>
-      <div class="stat-card">
-        <div class="num">6</div>
-        <div class="lbl">1st Author</div>
-      </div>
-      <div class="stat-card">
-        <div class="num">5</div>
-        <div class="lbl">Projects</div>
-      </div>
-      <div class="stat-card">
-        <div class="num">11</div>
-        <div class="lbl">Awards</div>
-      </div>
-      <div class="stat-card">
-        <div class="num">3</div>
-        <div class="lbl">Patents</div>
-      </div>
-      <div class="stat-card">
-        <div class="num">1</div>
-        <div class="lbl">Tech Transfer</div>
-      </div>
+      <div class="stat-card"><div class="num">21</div><div class="lbl">SCI Papers</div></div>
+      <div class="stat-card"><div class="num">6</div><div class="lbl">1st Author</div></div>
+      <div class="stat-card"><div class="num">5</div><div class="lbl">Projects</div></div>
+      <div class="stat-card"><div class="num">11</div><div class="lbl">Awards</div></div>
+      <div class="stat-card"><div class="num">3</div><div class="lbl">Patents</div></div>
+      <div class="stat-card"><div class="num">1</div><div class="lbl">Tech Transfer</div></div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════ RESEARCH ═══════════════ -->
 <section id="research">
   <div class="inner">
     <p class="section-label">01 — Research</p>
@@ -587,103 +187,92 @@
           <span class="tag">XPS</span>
           <span class="tag">FTIR</span>
           <span class="tag">X-ray Imaging</span>
-          <span class="tag">High-speed Imaging</span>
+          <span class="tag">High-speed Camera</span>
           <span class="tag">Soft Lithography</span>
           <span class="tag">Python</span>
           <span class="tag">MATLAB</span>
+          <span class="tag">COMSOL Multiphysics</span>
+          <span class="tag">ANSYS</span>
+          <span class="tag">OpenFOAM</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════ EXPERIENCE & EDUCATION ═══════════════ -->
 <section id="experience">
   <div class="inner">
     <p class="section-label">02 — Background</p>
     <h2>Experience &amp; Education</h2>
 
-    <!-- PROFESSIONAL -->
     <div class="tl-section">
       <h3>Professional</h3>
-
       <div class="tl-item">
-        <div class="tl-date">Feb. 2026<br>Present</div>
+        <div class="tl-date">2026<br>Present</div>
         <div class="tl-body">
           <h4>Postdoctoral Researcher</h4>
           <p class="org">Future Fluid &amp; Biomimetics Lab, POSTECH, South Korea</p>
           <p>Advisor: Prof. Sang Joon Lee</p>
         </div>
       </div>
-
       <div class="tl-item">
-        <div class="tl-date">Mar. 2026<br>Present</div>
+        <div class="tl-date">2026<br>Present</div>
         <div class="tl-body">
-          <h4>Project Manager</h4>
+          <h4>Project Manager (Research Participant, 참여연구원)</h4>
           <p class="org">POSCO Holdings</p>
           <p>Off-grid desalination for DLE process freshwater supply</p>
         </div>
       </div>
-
       <div class="tl-item">
-        <div class="tl-date">May 2024<br>Present</div>
+        <div class="tl-date">2024<br>Present</div>
         <div class="tl-body">
-          <h4>Project Manager</h4>
+          <h4>Project Manager (Research Participant, 참여연구원)</h4>
           <p class="org">National Research Foundation (NRF)</p>
           <p>ZLD technology for high-concentration brine treatment</p>
         </div>
       </div>
-
     </div>
 
-    <!-- ACADEMIC SERVICE -->
     <div class="tl-section">
       <h3>Academic Service</h3>
-
+      <div class="tl-item">
+        <div class="tl-date">2026</div>
+        <div class="tl-body">
+          <h4>Lecturer — Fluid Mechanics (MECH370)</h4>
+          <p class="org">POSTECH, Dept. of Mechanical Engineering</p>
+          <p>Delivered lectures on similitude as part of the MECH370 coursework</p>
+        </div>
+      </div>
       <div class="tl-item">
         <div class="tl-date">2025</div>
         <div class="tl-body">
           <h4>Panelist</h4>
           <p class="org">Youth Forum, WISE2025, Japan</p>
-          <p>International Workshop on Solar Interfacial Evaporation</p>
+          <p>International Workshop on Solar Interfacial Evaporation, Dec. 2025</p>
         </div>
       </div>
-
       <div class="tl-item">
-        <div class="tl-date">2023<br>Present</div>
-        <div class="tl-body">
-          <h4>Journal Peer Reviewer</h4>
-          <p class="org"><a href="https://orcid.org/0009-0009-7565-1880" target="_blank">View review record on ORCID ↗</a></p>
-          <p>Nature Communications, Water Research, Desalination, Composites Part B, Applied Thermal Engineering, Sep. &amp; Purif. Technology, npj Clean Water, Applied Surface Science, Energy, Journal of Cleaner Production</p>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-date">Apr. 2026</div>
-        <div class="tl-body">
-          <h4>Teaching Assistant — MECH370 Fluid Mechanics</h4>
-          <p class="org">POSTECH, Dept. of Mechanical Engineering</p>
-          <p>Assisted in course instruction on behalf of supervisor (Prof. Sang Joon Lee)</p>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-date">Jul. 2024</div>
+        <div class="tl-date">2024</div>
         <div class="tl-body">
           <h4>Technology Transfer</h4>
           <p class="org">Seowooin Co., South Korea</p>
           <p>3D aerogel-based solar &amp; wind desalination method</p>
         </div>
       </div>
-
+      <div class="tl-item">
+        <div class="tl-date">2021<br>Present</div>
+        <div class="tl-body">
+          <h4>Journal Peer Reviewer</h4>
+          <p class="org"><a href="https://orcid.org/0009-0009-7565-1880" target="_blank">View review record on ORCID ↗</a></p>
+          <p>Nature Communications, Water Research, Desalination, Composites Part B, Applied Thermal Engineering, Sep. &amp; Purif. Technology, npj Clean Water, Applied Surface Science, Energy, Journal of Cleaner Production</p>
+        </div>
+      </div>
     </div>
 
-    <!-- EDUCATION -->
     <div class="tl-section">
       <h3>Education</h3>
-
       <div class="tl-item">
-        <div class="tl-date">Mar. 2020<br>Feb. 2026</div>
+        <div class="tl-date">2020<br>2026</div>
         <div class="tl-body">
           <h4>M.S./Ph.D. (Integrated), Mechanical Engineering</h4>
           <p class="org">POSTECH, South Korea</p>
@@ -691,306 +280,195 @@
           <em style="font-size:0.8rem;color:var(--muted);">Advisor: Prof. Sang Joon Lee</em></p>
         </div>
       </div>
-
       <div class="tl-item">
-        <div class="tl-date">Mar. 2016<br>Feb. 2020</div>
+        <div class="tl-date">2014<br>2020</div>
         <div class="tl-body">
-          <h4>B.S., Manufacturing Systems and Design Engineering</h4>
-          <p class="org">Seoul National University of Science and Technology (SeoulTech), South Korea &amp; Northumbria University, UK (Dual Degree)</p>
+          <h4>B.S., Manufacturing Systems and Design Engineering (MSDE)</h4>
+          <p class="org">Seoul National University of Science and Technology (SeoulTech), South Korea<br>Northumbria University, United Kingdom (Dual Degree)</p>
           <p>Thesis: Microcantilever Nose Sensor for detecting VOC gases<br>
           <em style="font-size:0.8rem;color:var(--muted);">Advisor: Prof. Hyo-Sok Ahn</em></p>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ═══════════════ PUBLICATIONS ═══════════════ -->
 <section id="publications">
   <div class="inner">
     <p class="section-label">03 — Publications</p>
     <h2>Research Output</h2>
-
     <div class="pub-filter">
-      <button class="active" onclick="showTab('journals', this)">Journal Papers</button>
-      <button onclick="showTab('conferences', this)">Conference Proceedings</button>
-      <button onclick="showTab('patents', this)">Patents</button>
+      <button class="active" onclick="showTab('journals',this)">Journal Papers</button>
+      <button onclick="showTab('conferences',this)">Conference Proceedings</button>
+      <button onclick="showTab('patents',this)">Patents</button>
     </div>
 
-    <!-- JOURNALS -->
     <div id="journals" class="pub-tab active pub-list">
-
       <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.5rem;">
         <span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--teal);margin-right:4px;vertical-align:middle;"></span>
         Blue border = first-author paper
       </p>
-
+      <div class="pub-item first-author">
+        <div class="pub-num" style="color:var(--teal);">UR</div>
+        <div>
+          <div class="pub-title">Performance evaluation of arrayed 3D interfacial evaporators in a system perspective</div>
+          <div class="pub-meta">
+            <span class="badge badge-first">1st Author</span>
+            <span style="font-size:0.72rem;font-weight:700;background:#fef3c7;color:#92400e;padding:0.15rem 0.55rem;border-radius:99px;">Under Review</span>
+          </div>
+        </div>
+      </div>
       <div class="pub-item first-author">
         <div class="pub-num">21</div>
         <div>
           <div class="pub-title">Bioinspired gel-coated 3D wood evaporator with excellent salt mitigation ability: A sustainable fresh water production alternative</div>
-          <div class="pub-meta">
-            <span class="pub-journal">Chemical Engineering Journal</span>
-            <span class="badge badge-first">1st Author</span>
-            <span class="badge badge-if">IF 12.5</span>
-            <span class="badge badge-year">2026</span>
-          </div>
+          <div class="pub-meta"><span class="pub-journal">Chemical Engineering Journal</span><span class="badge badge-first">1st Author</span><span class="badge badge-if">IF 12.5</span><span class="badge badge-year">2026</span></div>
         </div>
       </div>
-
       <div class="pub-item">
         <div class="pub-num">20</div>
         <div>
           <div class="pub-title">Edge-Functionalized Graphene Nanoribbons/Graphene Nanofiltration Membrane for Solar-Driven Lithium Recovery From Brine</div>
-          <div class="pub-meta">
-            <span class="pub-journal">Advanced Functional Materials</span>
-            <span class="badge badge-if">IF 19.0</span>
-            <span class="badge badge-year">2026</span>
-          </div>
+          <div class="pub-meta"><span class="pub-journal">Advanced Functional Materials</span><span class="badge badge-if">IF 19.0</span><span class="badge badge-year">2026</span></div>
         </div>
       </div>
-
       <div class="pub-item">
         <div class="pub-num">19</div>
         <div>
           <div class="pub-title">Synergistic photo-electrothermal evaporation on superhydrophobic carbon cloth for high-efficiency freshwater production and excellent anti-salt fouling</div>
-          <div class="pub-meta">
-            <span class="pub-journal">Discover Surfaces</span>
-            <span class="badge badge-year">2026</span>
-          </div>
+          <div class="pub-meta"><span class="pub-journal">Discover Surfaces</span><span class="badge badge-year">2026</span></div>
         </div>
       </div>
-
       <div class="pub-item first-author">
         <div class="pub-num">18</div>
         <div>
           <div class="pub-title">Compact back-side solar still for efficient vapor condensation via evaporative and wetted Janus cooling</div>
-          <div class="pub-meta">
-            <span class="pub-journal">Desalination</span>
-            <span class="badge badge-first">1st Author</span>
-            <span class="badge badge-if">IF 9.9</span>
-            <span class="badge badge-year">2025</span>
-          </div>
+          <div class="pub-meta"><span class="pub-journal">Desalination</span><span class="badge badge-first">1st Author</span><span class="badge badge-if">IF 9.9</span><span class="badge badge-year">2025</span></div>
         </div>
       </div>
-
       <div class="pub-item first-author">
         <div class="pub-num">17</div>
         <div>
           <div class="pub-title">Inexpensive advanced diatomite evaporator with optimal structure and density for efficient seawater desalination</div>
-          <div class="pub-meta">
-            <span class="pub-journal">Chemical Engineering Journal</span>
-            <span class="badge badge-first">1st Author</span>
-            <span class="badge badge-if">IF 13.2</span>
-            <span class="badge badge-year">2025</span>
-          </div>
+          <div class="pub-meta"><span class="pub-journal">Chemical Engineering Journal</span><span class="badge badge-first">1st Author</span><span class="badge badge-if">IF 13.2</span><span class="badge badge-year">2025</span></div>
         </div>
       </div>
-
       <div class="pub-item">
         <div class="pub-num">16</div>
         <div>
           <div class="pub-title">Engineering electrothermally enhanced interfacial evaporation for high-performance solar desalination</div>
-          <div class="pub-meta">
-            <span class="pub-journal">Communications Engineering</span>
-            <span class="badge badge-if">IF 7.0</span>
-            <span class="badge badge-year">2025</span>
-          </div>
+          <div class="pub-meta"><span class="pub-journal">Communications Engineering</span><span class="badge badge-if">IF 7.0</span><span class="badge badge-year">2025</span></div>
         </div>
       </div>
-
       <div class="pub-item">
         <div class="pub-num">15</div>
         <div>
           <div class="pub-title">Camphor-derived biomass-based interfacial evaporator for enhanced all-day, all-weather solar desalination</div>
-          <div class="pub-meta">
-            <span class="pub-journal">Desalination</span>
-            <span class="badge badge-if">IF 9.9</span>
-            <span class="badge badge-year">2025</span>
-          </div>
+          <div class="pub-meta"><span class="pub-journal">Desalination</span><span class="badge badge-if">IF 9.9</span><span class="badge badge-year">2025</span></div>
         </div>
       </div>
-
       <div class="pub-item">
         <div class="pub-num">14</div>
         <div>
-          <div class="pub-title">Synergistic photothermal and electrothermal seawater desalination by a MoS₂-coated carbon cloth-based sandwich evaporator with superior anti-salt fouling performance</div>
-          <div class="pub-meta">
-            <span class="pub-journal">Desalination</span>
-            <span class="badge badge-if">IF 9.8</span>
-            <span class="badge badge-year">2025</span>
-          </div>
+          <div class="pub-title">Synergistic photothermal and electrothermal seawater desalination by a MoS&#x2082;-coated carbon cloth-based sandwich evaporator with superior anti-salt fouling performance</div>
+          <div class="pub-meta"><span class="pub-journal">Desalination</span><span class="badge badge-if">IF 9.8</span><span class="badge badge-year">2025</span></div>
         </div>
       </div>
-
       <div class="pub-item first-author">
         <div class="pub-num">13</div>
         <div>
           <div class="pub-title">Laminated chitosan/graphene nanoplatelets aerogel for 3D interfacial solar desalination with harnessing wind energy</div>
-          <div class="pub-meta">
-            <span class="pub-journal">Chemical Engineering Journal</span>
-            <span class="badge badge-first">1st Author</span>
-            <span class="badge badge-if">IF 13.2</span>
-            <span class="badge badge-year">2024</span>
-          </div>
+          <div class="pub-meta"><span class="pub-journal">Chemical Engineering Journal</span><span class="badge badge-first">1st Author</span><span class="badge badge-if">IF 13.2</span><span class="badge badge-year">2024</span></div>
         </div>
       </div>
-
       <div class="pub-item">
         <div class="pub-num">12</div>
         <div>
-          <div class="pub-title">A robust photoelectrothermal evaporator with hierarchical NiCo₂S₄ nanowires grown on nickel foam for a high rate of clean water production</div>
-          <div class="pub-meta">
-            <span class="pub-journal">Desalination</span>
-            <span class="badge badge-if">IF 9.8</span>
-            <span class="badge badge-year">2024</span>
-          </div>
+          <div class="pub-title">A robust photoelectrothermal evaporator with hierarchical NiCo&#x2082;S&#x2084; nanowires grown on nickel foam for a high rate of clean water production</div>
+          <div class="pub-meta"><span class="pub-journal">Desalination</span><span class="badge badge-if">IF 9.8</span><span class="badge badge-year">2024</span></div>
         </div>
       </div>
-
       <div class="pub-item">
         <div class="pub-num">11</div>
         <div>
           <div class="pub-title">Sustainable solar desalination through interfacial evaporation: Integration of chitosan aerogel-impregnated graphene nanoplatelets solar evaporator and phase change material</div>
-          <div class="pub-meta">
-            <span class="pub-journal">Desalination</span>
-            <span class="badge badge-if">IF 9.8</span>
-            <span class="badge badge-year">2024</span>
-          </div>
+          <div class="pub-meta"><span class="pub-journal">Desalination</span><span class="badge badge-if">IF 9.8</span><span class="badge badge-year">2024</span></div>
         </div>
       </div>
-
       <div class="pub-item first-author">
         <div class="pub-num">10</div>
         <div>
           <div class="pub-title">3D thermoresponsive hydrogel with enhanced water uptake and active evaporation for effective interfacial solar steam generation</div>
-          <div class="pub-meta">
-            <span class="pub-journal">Desalination</span>
-            <span class="badge badge-first">1st Author</span>
-            <span class="badge badge-if">IF 8.4</span>
-            <span class="badge badge-year">2023</span>
-            <span style="font-size:0.72rem;color:#b45309;font-weight:700;background:#fef9c3;padding:0.15rem 0.55rem;border-radius:99px;">★ Best Paper 2022–2024</span>
-          </div>
+          <div class="pub-meta"><span class="pub-journal">Desalination</span><span class="badge badge-first">1st Author</span><span class="badge badge-if">IF 8.4</span><span class="badge badge-year">2023</span><span style="font-size:0.72rem;color:#b45309;font-weight:700;background:#fef9c3;padding:0.15rem 0.55rem;border-radius:99px;">&#x2605; Best Paper 2022&#x2013;2024</span></div>
         </div>
       </div>
-
       <div class="pub-item">
         <div class="pub-num">9</div>
         <div>
           <div class="pub-title">Peanut shell-derived photothermal absorber for solar desalination</div>
-          <div class="pub-meta">
-            <span class="pub-journal">Desalination</span>
-            <span class="badge badge-if">IF 8.4</span>
-            <span class="badge badge-year">2023</span>
-          </div>
+          <div class="pub-meta"><span class="pub-journal">Desalination</span><span class="badge badge-if">IF 8.4</span><span class="badge badge-year">2023</span></div>
         </div>
       </div>
-
       <div class="pub-item">
         <div class="pub-num">8</div>
         <div>
           <div class="pub-title">A low-cost plant transpiration inspired 3D popsicle design for highly efficient solar desalination</div>
-          <div class="pub-meta">
-            <span class="pub-journal">Desalination</span>
-            <span class="badge badge-if">IF 8.4</span>
-            <span class="badge badge-year">2023</span>
-          </div>
+          <div class="pub-meta"><span class="pub-journal">Desalination</span><span class="badge badge-if">IF 8.4</span><span class="badge badge-year">2023</span></div>
         </div>
       </div>
-
       <div class="pub-item">
         <div class="pub-num">7</div>
         <div>
           <div class="pub-title">Conversion of Hazardous Diesel Soot Particles into a Novel Highly Efficient 3D Hydrogel for Solar Desalination and Wastewater Purification</div>
-          <div class="pub-meta">
-            <span class="pub-journal">ACS Omega</span>
-            <span class="badge badge-if">IF 3.7</span>
-            <span class="badge badge-year">2023</span>
-          </div>
+          <div class="pub-meta"><span class="pub-journal">ACS Omega</span><span class="badge badge-if">IF 3.7</span><span class="badge badge-year">2023</span></div>
         </div>
       </div>
-
       <div class="pub-item">
         <div class="pub-num">6</div>
         <div>
           <div class="pub-title">Optimization of bamboo-based photothermal interfacial solar evaporator for enhancing water purification</div>
-          <div class="pub-meta">
-            <span class="pub-journal">Environmental Science and Pollution Research</span>
-            <span class="badge badge-if">IF 5.8</span>
-            <span class="badge badge-year">2023</span>
-          </div>
+          <div class="pub-meta"><span class="pub-journal">Environmental Science and Pollution Research</span><span class="badge badge-if">IF 5.8</span><span class="badge badge-year">2023</span></div>
         </div>
       </div>
-
       <div class="pub-item first-author">
         <div class="pub-num">5</div>
         <div>
           <div class="pub-title">Double-insulated porous PDMS sponge for heat-localized solar evaporative seawater desalination</div>
-          <div class="pub-meta">
-            <span class="pub-journal">Desalination</span>
-            <span class="badge badge-first">1st Author</span>
-            <span class="badge badge-if">IF 9.9</span>
-            <span class="badge badge-year">2022</span>
-          </div>
+          <div class="pub-meta"><span class="pub-journal">Desalination</span><span class="badge badge-first">1st Author</span><span class="badge badge-if">IF 9.9</span><span class="badge badge-year">2022</span></div>
         </div>
       </div>
-
       <div class="pub-item">
         <div class="pub-num">4</div>
         <div>
           <div class="pub-title">Highly Efficient and Salt-Rejecting Poly(vinyl alcohol) Hydrogels with Excellent Mechanical Strength for Solar Desalination</div>
-          <div class="pub-meta">
-            <span class="pub-journal">ACS Applied Materials &amp; Interfaces</span>
-            <span class="badge badge-if">IF 9.5</span>
-            <span class="badge badge-year">2022</span>
-          </div>
+          <div class="pub-meta"><span class="pub-journal">ACS Applied Materials &amp; Interfaces</span><span class="badge badge-if">IF 9.5</span><span class="badge badge-year">2022</span></div>
         </div>
       </div>
-
       <div class="pub-item">
         <div class="pub-num">3</div>
         <div>
           <div class="pub-title">A review on efficiently integrated passive distillation systems for active solar steam evaporation</div>
-          <div class="pub-meta">
-            <span class="pub-journal">Renewable &amp; Sustainable Energy Reviews</span>
-            <span class="badge badge-if">IF 15.9</span>
-            <span class="badge badge-year">2022</span>
-          </div>
+          <div class="pub-meta"><span class="pub-journal">Renewable &amp; Sustainable Energy Reviews</span><span class="badge badge-if">IF 15.9</span><span class="badge badge-year">2022</span></div>
         </div>
       </div>
-
       <div class="pub-item">
         <div class="pub-num">2</div>
         <div>
           <div class="pub-title">A review on carbonized natural green flora for solar desalination</div>
-          <div class="pub-meta">
-            <span class="pub-journal">Renewable &amp; Sustainable Energy Reviews</span>
-            <span class="badge badge-if">IF 15.9</span>
-            <span class="badge badge-year">2022</span>
-          </div>
+          <div class="pub-meta"><span class="pub-journal">Renewable &amp; Sustainable Energy Reviews</span><span class="badge badge-if">IF 15.9</span><span class="badge badge-year">2022</span></div>
         </div>
       </div>
-
       <div class="pub-item">
         <div class="pub-num">1</div>
         <div>
           <div class="pub-title">Adsorptive seawater desalination using MOF-incorporated Cu-alginate/PVA beads: Ion removal efficiency and durability</div>
-          <div class="pub-meta">
-            <span class="pub-journal">Chemosphere</span>
-            <span class="badge badge-if">IF 8.9</span>
-            <span class="badge badge-year">2021</span>
-          </div>
+          <div class="pub-meta"><span class="pub-journal">Chemosphere</span><span class="badge badge-if">IF 8.9</span><span class="badge badge-year">2021</span></div>
         </div>
       </div>
+    </div>
 
-    </div><!-- /journals -->
-
-    <!-- CONFERENCES -->
     <div id="conferences" class="pub-tab">
-
       <div class="conf-group-label">International Conferences</div>
-
       <div class="conf-item">
         <div class="num">4</div>
         <div class="body">
@@ -998,15 +476,13 @@
           <p class="venue">International Workshop on Solar Interfacial Evaporation (WISE2025), Japan, 2025</p>
         </div>
       </div>
-
       <div class="conf-item">
         <div class="num">3</div>
         <div class="body">
           <p><strong>H.W. Lim</strong>, S.J. Lee, "Solar-driven evaporation system for high-salinity wastewater desalination using 3D chitosan-based interfacial evaporators"</p>
-          <p class="venue">Desalination for the Environment — Clean Water and Energy, Portugal, 2025</p>
+          <p class="venue">Desalination for the Environment &#x2014; Clean Water and Energy, Portugal, 2025</p>
         </div>
       </div>
-
       <div class="conf-item">
         <div class="num">2</div>
         <div class="body">
@@ -1014,262 +490,198 @@
           <p class="venue">6th International Conference on Desalination using Membrane Technology, Spain, 2023</p>
         </div>
       </div>
-
       <div class="conf-item">
         <div class="num">1</div>
         <div class="body">
           <p><strong>H.W. Lim</strong>, S.H. Park, S.J. Lee, "Seawater desalination using ion removal kinetics of MOF-incorporated alginate composite"</p>
-          <p class="venue">73rd Annual Meeting of the APS Division of Fluid Dynamics, USA, 2020</p>
+          <p class="venue">73rd Annual Meeting of the APS Division of Fluid Dynamics, USA, 2020 <span style="font-size:0.72rem;font-weight:600;background:#f1f5f9;color:#475569;padding:0.1rem 0.45rem;border-radius:99px;">Virtual</span></p>
         </div>
       </div>
 
       <div class="conf-group-label">Domestic Conferences (South Korea)</div>
-
+      <div class="conf-item">
+        <div class="num">14</div>
+        <div class="body">
+          <p><strong>H.W. Lim</strong>, S.J. Lee, "&#xC720;&#xB3D9; &#xC870;&#xAC74;&#xC5D0;&#xC11C; 3&#xCC28;&#xC6D0; &#xC99D;&#xBC1C;&#xAE30; &#xBC30;&#xC5F4;&#xC5D0; &#xB530;&#xB978; &#xC99D;&#xBC1C; &#xBC0F; &#xC628;&#xC2B5;&#xB3C4; &#xD2B9;&#xC131; &#xC870;&#xC0AC;"</p>
+          <p class="venue">2026&#xB144; &#xC81C;14&#xD68C; &#xD55C;&#xAD6D;&#xC720;&#xCCB4;&#xACF5;&#xD559;&#xD559;&#xC220;&#xB300;&#xD68C;, Jul. 2026</p>
+        </div>
+      </div>
       <div class="conf-item">
         <div class="num">13</div>
         <div class="body">
-          <p><strong>H.W. Lim</strong>, S.J. Lee, "고염수로부터의 소금 추출 제어를 위한 신재생에너지 기반 계면 증발 기술 개발"</p>
-          <p class="venue">대한기계학회 창립 80주년 기념 학술대회, Dec. 2025</p>
+          <p><strong>H.W. Lim</strong>, S.J. Lee, "&#xACE0;&#xC5FC;&#xC218;&#xB85C;&#xBD80;&#xD130;&#xC758; &#xC18C;&#xAE08; &#xCD94;&#xCD9C; &#xC81C;&#xC5B4;&#xB97C; &#xC704;&#xD55C; &#xC2E0;&#xC7AC;&#xC0DD;&#xC5D0;&#xB108;&#xC9C0; &#xAE30;&#xBC18;&#xC758; &#xACC4;&#xBA74; &#xC99D;&#xBC1C; &#xAE30;&#xC220; &#xAC1C;&#xBC1C;"</p>
+          <p class="venue">&#xB300;&#xD55C;&#xAE30;&#xACC4;&#xD559;&#xD68C; &#xCC3D;&#xB9BD; 80&#xC8FC;&#xB144; &#xAE30;&#xB150; &#xD559;&#xC220;&#xB300;&#xD68C;, Dec. 2025</p>
         </div>
       </div>
-
       <div class="conf-item">
         <div class="num">12</div>
         <div class="body">
-          <p><strong>H.W. Lim</strong>, S.J. Lee, "폴리머가 코팅된 나무를 이용한 광열 증발기 개발 및 열유체 특성 분석"</p>
-          <p class="venue">2025년 한국가시화정보학회 춘계학술대회, Nov. 2025</p>
+          <p><strong>H.W. Lim</strong>, S.J. Lee, "&#xD3F4;&#xB9AC;&#xBA38;&#xAC00; &#xCF54;&#xD305;&#xB41C; &#xB098;&#xBB34;&#xB97C; &#xC774;&#xC6A9;&#xD55C; &#xAD11;&#xC5F4; &#xC99D;&#xBC1C;&#xAE30; &#xAC1C;&#xBC1C; &#xBC0F; &#xC5F4;&#xC720;&#xCCB4; &#xD2B9;&#xC131; &#xBD84;&#xC11D;"</p>
+          <p class="venue">2025&#xB144; &#xD55C;&#xAD6D;&#xAC00;&#xC2DC;&#xD654;&#xC815;&#xBCF4;&#xD559;&#xD68C; &#xCD98;&#xACC4;&#xD559;&#xC220;&#xB300;&#xD68C;, Nov. 2025</p>
         </div>
       </div>
-
       <div class="conf-item">
         <div class="num">11</div>
         <div class="body">
-          <p><strong>H.W. Lim</strong>, S.J. Lee, "증발식 및 습식 냉각을 통한 효율적인 물 응축을 기반한 소형 태양광 증류기 개발"</p>
-          <p class="venue">대한기계학회 유체공학부문 2025년 춘계학술대회, Apr. 2025</p>
+          <p><strong>H.W. Lim</strong>, S.J. Lee, "&#xC99D;&#xBC1C;&#xC2DD; &#xBC0F; &#xC2B5;&#xC2DD; &#xB0C9;&#xAC01;&#xC744; &#xD1B5;&#xD55C; &#xD6A8;&#xC728;&#xC801;&#xC778; &#xBB3C; &#xC751;&#xCD95;&#xC744; &#xAE30;&#xBC18;&#xD55C; &#xC18C;&#xD615; &#xD0DC;&#xC591;&#xAD11; &#xC99D;&#xB958;&#xAE30; &#xAC1C;&#xBC1C;"</p>
+          <p class="venue">&#xB300;&#xD55C;&#xAE30;&#xACC4;&#xD559;&#xD68C; &#xC720;&#xCCB4;&#xACF5;&#xD559;&#xBD80;&#xBB38; 2025&#xB144; &#xCD98;&#xACC4;&#xD559;&#xC220;&#xB300;&#xD68C;, Apr. 2025</p>
         </div>
       </div>
-
       <div class="conf-item">
         <div class="num">10</div>
         <div class="body">
-          <p><strong>H.W. Lim</strong>, S.J. Lee, "친수성 섬유로 구성된 날개형 증발기의 회전에 따른 증발 특성 분석"</p>
-          <p class="venue">대한기계학회 2024년 학술대회, Nov. 2024</p>
+          <p><strong>H.W. Lim</strong>, S.J. Lee, "&#xCE5C;&#xC218;&#xC131; &#xC12C;&#xC720;&#xB85C; &#xAD6C;&#xC131;&#xB41C; &#xB0A0;&#xAC1C;&#xD615; &#xC99D;&#xBC1C;&#xAE30;&#xC758; &#xD68C;&#xC804;&#xC5D0; &#xB530;&#xB978; &#xC99D;&#xBC1C; &#xD2B9;&#xC131; &#xBD84;&#xC11D;"</p>
+          <p class="venue">&#xB300;&#xD55C;&#xAE30;&#xACC4;&#xD559;&#xD68C; 2024&#xB144; &#xD559;&#xC220;&#xB300;&#xD68C;, Nov. 2024</p>
         </div>
       </div>
-
       <div class="conf-item">
         <div class="num">9</div>
         <div class="body">
-          <p><strong>H.W. Lim</strong>, S.J. Lee, "증발 조건에서 실리카 기반 다공성 매질의 제작 조건에 따른 물 수송 및 열전달 특성 연구"</p>
-          <p class="venue">2024년 제13회 한국유체공학 학술대회, Jul. 2024</p>
+          <p><strong>H.W. Lim</strong>, S.J. Lee, "&#xC99D;&#xBC1C; &#xC870;&#xAC74;&#xC5D0;&#xC11C; &#xC2E4;&#xB9AC;&#xCE74; &#xAE30;&#xBC18; &#xB2E4;&#xACF5;&#xC131; &#xB9E4;&#xC9C8;&#xC758; &#xC81C;&#xC791; &#xC870;&#xAC74;&#xC5D0; &#xB530;&#xB978; &#xBB3C; &#xC218;&#xC1A1; &#xBC0F; &#xC5F4;&#xC804;&#xB2EC; &#xD2B9;&#xC131; &#xC5F0;&#xAD6C;"</p>
+          <p class="venue">2024&#xB144; &#xC81C;13&#xD68C; &#xD55C;&#xAD6D;&#xC720;&#xCCB4;&#xACF5;&#xD559;&#xD559;&#xC220;&#xB300;&#xD68C;, Jul. 2024</p>
         </div>
       </div>
-
       <div class="conf-item">
         <div class="num">8</div>
         <div class="body">
-          <p><strong>H.W. Lim</strong>, S.J. Lee, "광열변환 기능을 갖는 다공성 매질에서의 해수 증발에 따른 소금 석출 방지 특성 분석"</p>
-          <p class="venue">대한기계학회 2023년 학술대회, Nov. 2023</p>
+          <p><strong>H.W. Lim</strong>, S.J. Lee, "&#xAD11;&#xC5F4;&#xBCC0;&#xD658; &#xAE30;&#xB2A5;&#xC744; &#xAC16;&#xB294; &#xB2E4;&#xACF5;&#xC131; &#xB9E4;&#xC9C8;&#xC5D0;&#xC11C;&#xC758; &#xD574;&#xC218; &#xC99D;&#xBC1C;&#xC5D0; &#xB530;&#xB978; &#xC18C;&#xAE08; &#xC11D;&#xCD9C; &#xBC29;&#xC9C0; &#xD2B9;&#xC131; &#xBD84;&#xC11D;"</p>
+          <p class="venue">&#xB300;&#xD55C;&#xAE30;&#xACC4;&#xD559;&#xD68C; 2023&#xB144; &#xD559;&#xC220;&#xB300;&#xD68C;, Nov. 2023</p>
         </div>
       </div>
-
       <div class="conf-item">
         <div class="num">7</div>
         <div class="body">
-          <p><strong>H.W. Lim</strong>, S.J. Lee, "에어로젤 내부의 밀도 차이에 따른 물수송 및 증발 특성 연구"</p>
-          <p class="venue">대한기계학회 유체공학부문 춘계학술대회, May 2023</p>
+          <p><strong>H.W. Lim</strong>, S.J. Lee, "&#xC5D0;&#xC5B4;&#xB85C;&#xC820; &#xB0B4;&#xBD80;&#xC758; &#xBC00;&#xB3C4; &#xCC28;&#xC774;&#xC5D0; &#xB530;&#xB978; &#xBB3C;&#xC218;&#xC1A1; &#xBC0F; &#xC99D;&#xBC1C; &#xD2B9;&#xC131; &#xC5F0;&#xAD6C;"</p>
+          <p class="venue">&#xB300;&#xD55C;&#xAE30;&#xACC4;&#xD559;&#xD68C; &#xC720;&#xCCB4;&#xACF5;&#xD559;&#xBD80;&#xBB38; &#xCD98;&#xACC4;&#xD559;&#xC220;&#xB300;&#xD68C;, May 2023</p>
         </div>
       </div>
-
       <div class="conf-item">
         <div class="num">6</div>
         <div class="body">
           <p><strong>H.W. Lim</strong>, S.J. Lee, "Anisotropic alginate hydrogel functionalized with fast water transport and anti-salt fouling effect"</p>
-          <p class="venue">2022년 제12회 한국유체공학학술대회, Jun. 2022</p>
+          <p class="venue">2022&#xB144; &#xC81C;12&#xD68C; &#xD55C;&#xAD6D;&#xC720;&#xCCB4;&#xACF5;&#xD559;&#xD559;&#xC220;&#xB300;&#xD68C;, Jun. 2022</p>
         </div>
       </div>
-
       <div class="conf-item">
         <div class="num">5</div>
         <div class="body">
-          <p><strong>H.W. Lim</strong>, S.J. Lee, "하이드로젤 기반 3차원 형상의 계면증발식 멤브레인 개발 및 유동가시화"</p>
-          <p class="venue">2022년 한국가시화정보학회 춘계학술대회, May 2022</p>
+          <p><strong>H.W. Lim</strong>, S.J. Lee, "&#xD558;&#xC774;&#xB4DC;&#xB85C;&#xC820; &#xAE30;&#xBC18; 3&#xCC28;&#xC6D0; &#xD615;&#xC0C1;&#xC758; &#xACC4;&#xBA74;&#xC99D;&#xBC1C;&#xC2DD; &#xBA64;&#xBE0C;&#xB808;&#xC778; &#xAC1C;&#xBC1C; &#xBC0F; &#xC720;&#xB3D9;&#xAC00;&#xC2DC;&#xD654;"</p>
+          <p class="venue">2022&#xB144; &#xD55C;&#xAD6D;&#xAC00;&#xC2DC;&#xD654;&#xC815;&#xBCF4;&#xD559;&#xD68C; &#xCD98;&#xACC4;&#xD559;&#xC220;&#xB300;&#xD68C;, May 2022</p>
         </div>
       </div>
-
       <div class="conf-item">
         <div class="num">4</div>
         <div class="body">
-          <p><strong>H.W. Lim</strong>, S.J. Lee, "설탕이 탄화된 porous PDMS 스펀지를 이용한 태양광 증발식 담수화 기술"</p>
-          <p class="venue">2021년 한국가시화정보학회 추계학술대회, Nov. 2021</p>
+          <p><strong>H.W. Lim</strong>, S.J. Lee, "&#xC124;&#xD0D5;&#xC774; &#xD0C4;&#xD654;&#xB41C; porous PDMS &#xC2A4;&#xD3C8;&#xC9C0;&#xB97C; &#xC774;&#xC6A9;&#xD55C; &#xD0DC;&#xC591;&#xAD11; &#xC99D;&#xBC1C;&#xC2DD; &#xB2F4;&#xC218;&#xD654; &#xAE30;&#xC220;"</p>
+          <p class="venue">2021&#xB144; &#xD55C;&#xAD6D;&#xAC00;&#xC2DC;&#xD654;&#xC815;&#xBCF4;&#xD559;&#xD68C; &#xCD94;&#xACC4;&#xD559;&#xC220;&#xB300;&#xD68C;, Nov. 2021</p>
         </div>
       </div>
-
       <div class="conf-item">
         <div class="num">3</div>
         <div class="body">
-          <p><strong>H.W. Lim</strong>, S.H. Park, S.J. Lee, "MOF가 합성된 알긴산/PVA 하이드로젤의 이온 흡착 능력을 통한 해수담수화 기술"</p>
-          <p class="venue">대한기계학회 2020년 학술대회, Dec. 2020</p>
+          <p><strong>H.W. Lim</strong>, S.H. Park, S.J. Lee, "MOF&#xAC00; &#xD569;&#xC131;&#xB41C; &#xC54C;&#xAE34;&#xC0B0;/PVA &#xD558;&#xC774;&#xB4DC;&#xB85C;&#xC820;&#xC758; &#xC774;&#xC628; &#xD761;&#xCC29; &#xB2A5;&#xB825;&#xC744; &#xD1B5;&#xD55C; &#xD574;&#xC218;&#xB2F4;&#xC218;&#xD654; &#xAE30;&#xC220;"</p>
+          <p class="venue">&#xB300;&#xD55C;&#xAE30;&#xACC4;&#xD559;&#xD68C; 2020&#xB144; &#xD559;&#xC220;&#xB300;&#xD68C;, Dec. 2020</p>
         </div>
       </div>
-
       <div class="conf-item">
         <div class="num">2</div>
         <div class="body">
-          <p><strong>H.W. Lim</strong>, S.J. Lee, "MOF가 합성된 Alginate/PVA 기반의 흡착식 담수화 기술 연구"</p>
-          <p class="venue">2020년 한국가시화정보학회 추계학술대회, Nov. 2020</p>
+          <p><strong>H.W. Lim</strong>, S.J. Lee, "MOF&#xAC00; &#xD569;&#xC131;&#xB41C; Alginate/PVA &#xAE30;&#xBC18;&#xC758; &#xD761;&#xCC29;&#xC2DD; &#xB2F4;&#xC218;&#xD654; &#xAE30;&#xC220; &#xC5F0;&#xAD6C;"</p>
+          <p class="venue">2020&#xB144; &#xD55C;&#xAD6D;&#xAC00;&#xC2DC;&#xD654;&#xC815;&#xBCF4;&#xD559;&#xD68C; &#xCD94;&#xACC4;&#xD559;&#xC220;&#xB300;&#xD68C;, Nov. 2020</p>
         </div>
       </div>
-
       <div class="conf-item">
         <div class="num">1</div>
         <div class="body">
           <p><strong>H.W. Lim</strong>, S.H. Park, S.J. Lee, "Adsorptive-based seawater desalination using MOF-synthesized alginate/PVA hydrogel"</p>
-          <p class="venue">2020년 제11회 한국유체공학학술대회, Aug. 2020</p>
+          <p class="venue">2020&#xB144; &#xC81C;11&#xD68C; &#xD55C;&#xAD6D;&#xC720;&#xCCB4;&#xACF5;&#xD559;&#xD559;&#xC220;&#xB300;&#xD68C;, Aug. 2020</p>
         </div>
       </div>
+    </div>
 
-    </div><!-- /conferences -->
-
-    <!-- PATENTS -->
     <div id="patents" class="pub-tab">
-
       <div class="conf-group-label">Korean Patents</div>
-
       <div class="patent-item">
         <div class="num">2</div>
         <div class="body">
           <p>3D Aerogel, method for preparing same and solar and wind power-based interfacial evaporation desalination method</p>
-          <p class="venue">Application No.: 10-2023-0146241 · Filed: Oct. 2023 · South Korea</p>
+          <p class="venue">Application No.: 10-2023-0146241 &middot; Filed: Oct. 2023 &middot; South Korea &middot; <span style="font-size:0.72rem;font-weight:700;background:#f0fdf4;color:#166534;padding:0.1rem 0.45rem;border-radius:99px;">Technology Transferred</span></p>
         </div>
       </div>
-
       <div class="patent-item">
         <div class="num">1</div>
         <div class="body">
-          <p>Metal-organic framework–alginic acid/polyvinyl alcohol adsorbent, preparation method, seawater desalination system and method</p>
-          <p class="venue">Registration No.: 10-2332434 · Granted: Nov. 2021 · South Korea</p>
+          <p>Metal-organic framework&#x2013;alginic acid/polyvinyl alcohol adsorbent, preparation method, seawater desalination system and method</p>
+          <p class="venue">Registration No.: 10-2332434 &middot; Granted: Nov. 2021 &middot; South Korea</p>
         </div>
       </div>
-
       <div class="conf-group-label">International Patent</div>
-
       <div class="patent-item">
         <div class="num">1</div>
         <div class="body">
           <p>3D Aerogel, method for preparing same and solar and wind power-based interfacial evaporation desalination method</p>
-          <p class="venue">PCT/KR2024/005297 · Filed: Apr. 2024 · USA (PCT)</p>
+          <p class="venue">PCT/KR2024/005297 &middot; Filed: Apr. 2024 &middot; USA (PCT)</p>
         </div>
       </div>
-
-    </div><!-- /patents -->
-
-  </div>
-</section>
-
-<!-- ═══════════════ AWARDS ═══════════════ -->
-<section id="awards">
-  <div class="inner">
-    <p class="section-label">04 — Recognition</p>
-    <h2>Awards &amp; Honors</h2>
-
-    <div class="award-list">
-
-      <div class="award-item">
-        <div class="award-date">Apr. 2026</div>
-        <div>
-          <div class="award-desc">Outstanding Doctoral Dissertation Award in Fluid Engineering</div>
-          <div class="award-org">Korean Society of Mechanical Engineers (KSME)</div>
-        </div>
-      </div>
-
-      <div class="award-item">
-        <div class="award-date">Dec. 2025</div>
-        <div>
-          <div class="award-desc">BK21 Graduate Student Encouraging Paper Award</div>
-          <div class="award-org">POSTECH, Dept. of Mechanical Engineering</div>
-        </div>
-      </div>
-
-      <div class="award-item">
-        <div class="award-date">Dec. 2024</div>
-        <div>
-          <div class="award-desc">★ Best Paper in <em>Desalination</em> Journal 2022–2024</div>
-          <div class="award-org">Elsevier — among 14 recognized papers across the desalination field</div>
-        </div>
-      </div>
-
-      <div class="award-item">
-        <div class="award-date">Dec. 2024</div>
-        <div>
-          <div class="award-desc">BK21 Graduate Student Outstanding Paper Award</div>
-          <div class="award-org">POSTECH, Dept. of Mechanical Engineering</div>
-        </div>
-      </div>
-
-      <div class="award-item">
-        <div class="award-date">Jan. 2024</div>
-        <div>
-          <div class="award-desc">4th POSTECH Excellence Competition — Outstanding Paper Challenge Award</div>
-          <div class="award-org">POSTECH</div>
-        </div>
-      </div>
-
-      <div class="award-item">
-        <div class="award-date">Dec. 2023</div>
-        <div>
-          <div class="award-desc">BK21 Graduate Student Outstanding Paper Award</div>
-          <div class="award-org">POSTECH, Dept. of Mechanical Engineering</div>
-        </div>
-      </div>
-
-      <div class="award-item">
-        <div class="award-date">Feb. 2023</div>
-        <div>
-          <div class="award-desc">3rd POSTECH Excellence Competition — Encouragement Award</div>
-          <div class="award-org">POSTECH</div>
-        </div>
-      </div>
-
-      <div class="award-item">
-        <div class="award-date">Dec. 2022</div>
-        <div>
-          <div class="award-desc">BK21 Graduate Student Outstanding Paper Award — Grand Prize</div>
-          <div class="award-org">POSTECH, Dept. of Mechanical Engineering</div>
-        </div>
-      </div>
-
-      <div class="award-item">
-        <div class="award-date">Dec. 2022</div>
-        <div>
-          <div class="award-desc">Ikseong Scholarship Award</div>
-          <div class="award-org">POSTECH, Dept. of Mechanical Engineering</div>
-        </div>
-      </div>
-
-      <div class="award-item">
-        <div class="award-date">May 2022</div>
-        <div>
-          <div class="award-desc">Outstanding Paper Award</div>
-          <div class="award-org">Korean Society of Visualization, 2022 Spring Conference</div>
-        </div>
-      </div>
-
-      <div class="award-item">
-        <div class="award-date">Nov. 2021</div>
-        <div>
-          <div class="award-desc">Outstanding Paper Award — Grand Prize</div>
-          <div class="award-org">Korean Society of Visualization, 2021 Autumn Conference</div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
-<!-- ═══════════════ FOOTER ═══════════════ -->
+<section id="awards">
+  <div class="inner">
+    <p class="section-label">04 — Recognition</p>
+    <h2>Awards &amp; Honors</h2>
+    <div class="award-list">
+      <div class="award-item">
+        <div class="award-date">Apr. 2026</div>
+        <div><div class="award-desc">Outstanding Doctoral Dissertation Award in Fluid Engineering</div><div class="award-org">Korean Society of Mechanical Engineers (KSME)</div></div>
+      </div>
+      <div class="award-item">
+        <div class="award-date">Dec. 2025</div>
+        <div><div class="award-desc">BK21 Graduate Student Encouraging Paper Award</div><div class="award-org">POSTECH, Dept. of Mechanical Engineering</div></div>
+      </div>
+      <div class="award-item">
+        <div class="award-date">Dec. 2024</div>
+        <div><div class="award-desc">&#x2605; Best Paper in <em>Desalination</em> Journal 2022&#x2013;2024</div><div class="award-org">Elsevier &#x2014; among 14 recognized papers across the desalination field</div></div>
+      </div>
+      <div class="award-item">
+        <div class="award-date">Dec. 2024</div>
+        <div><div class="award-desc">BK21 Graduate Student Outstanding Paper Award</div><div class="award-org">POSTECH, Dept. of Mechanical Engineering</div></div>
+      </div>
+      <div class="award-item">
+        <div class="award-date">Jan. 2024</div>
+        <div><div class="award-desc">4th POSTECH Excellence Competition &#x2014; Outstanding Paper Challenge Award</div><div class="award-org">POSTECH</div></div>
+      </div>
+      <div class="award-item">
+        <div class="award-date">Dec. 2023</div>
+        <div><div class="award-desc">BK21 Graduate Student Outstanding Paper Award</div><div class="award-org">POSTECH, Dept. of Mechanical Engineering</div></div>
+      </div>
+      <div class="award-item">
+        <div class="award-date">Feb. 2023</div>
+        <div><div class="award-desc">3rd POSTECH Excellence Competition &#x2014; Encouragement Award</div><div class="award-org">POSTECH</div></div>
+      </div>
+      <div class="award-item">
+        <div class="award-date">Dec. 2022</div>
+        <div><div class="award-desc">&#x2605; BK21 Graduate Student Outstanding Paper Award &#x2014; Grand Prize</div><div class="award-org">POSTECH, Dept. of Mechanical Engineering</div></div>
+      </div>
+      <div class="award-item">
+        <div class="award-date">Dec. 2022</div>
+        <div><div class="award-desc">Ikseong Scholarship Award</div><div class="award-org">POSTECH, Dept. of Mechanical Engineering</div></div>
+      </div>
+      <div class="award-item">
+        <div class="award-date">May 2022</div>
+        <div><div class="award-desc">Outstanding Paper Award</div><div class="award-org">Korean Society of Visualization, 2022 Spring Conference</div></div>
+      </div>
+      <div class="award-item">
+        <div class="award-date">Nov. 2021</div>
+        <div><div class="award-desc">&#x2605; Outstanding Paper Award &#x2014; Grand Prize</div><div class="award-org">Korean Society of Visualization, 2021 Autumn Conference</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
-  © 2026 Hyeong Woo Lim · <a href="mailto:hyeongwoo@postech.ac.kr">hyeongwoo@postech.ac.kr</a> · POSTECH, Pohang, South Korea
+  &copy; 2026 Hyeong Woo Lim &middot; <a href="mailto:hyeongwoo@postech.ac.kr">hyeongwoo@postech.ac.kr</a> &middot; POSTECH, Pohang, South Korea
 </footer>
 
 <script>
@@ -1280,6 +692,5 @@
     btn.classList.add('active');
   }
 </script>
-
 </body>
 </html>
