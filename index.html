@@ -58,6 +58,8 @@
     .research-box { background: var(--bg); border: 1px solid var(--border); border-radius: 14px; padding: 1.75rem; }
     .research-box h3 { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 1rem; }
     .tag-cloud { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .tag-cloud-2col { display: grid; grid-template-columns: repeat(2, 1fr); justify-items: start; }
+    @media (max-width: 480px) { .tag-cloud-2col { grid-template-columns: 1fr; } }
     .tag { padding: 0.35rem 0.8rem; border-radius: 99px; font-size: 0.82rem; font-weight: 500; background: var(--teal-l); color: var(--teal-d); }
     .tl-section { margin-bottom: 2.5rem; }
     .tl-section h3 { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 1.2rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); }
@@ -164,7 +166,7 @@
     <div class="research-grid">
       <div class="research-box">
         <h3>Research Interests</h3>
-        <div class="tag-cloud">
+        <div class="tag-cloud tag-cloud-2col">
           <span class="tag">Solar-Thermal Evaporation</span>
           <span class="tag">Thermal Management</span>
           <span class="tag">Seawater Desalination</span>
